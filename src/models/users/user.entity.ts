@@ -4,7 +4,6 @@ import {
   Column,
   BeforeInsert,
   BeforeUpdate,
-  PrimaryColumn,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -37,8 +36,8 @@ export class User extends BaseEntity {
   @Column({ type: 'varchar', select: false })
   salt: string;
 
-  // @OneToMany((type) => Address, (address) => address.user_id)
-  // addresses: Address[];
+  @OneToMany((type) => Address, (address) => address.user_id)
+  addresses: Address[];
 
   @BeforeInsert()
   createDate() {
