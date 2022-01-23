@@ -2,7 +2,7 @@ import { Factory, Seeder } from 'typeorm-seeding';
 import { Connection, getRepository } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { User } from '../../models/users/user.entity';
-import { Address } from '../../models/address/address.entity';
+import { Address } from '../../models/addresses/address.entity';
 
 export default class Create implements Seeder {
   public async run(factory: Factory, connection: Connection): Promise<any> {
