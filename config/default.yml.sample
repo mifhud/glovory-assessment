@@ -9,7 +9,7 @@ grpc:
 typeorm:
   type: 'postgres'
   port: 5432
-  database: 'glovory_assessment'
+  database: 'database'
 
 jwt:
   expiresIn: 3600
