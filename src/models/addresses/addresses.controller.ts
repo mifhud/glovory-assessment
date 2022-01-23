@@ -9,6 +9,7 @@ import {
   ApiUnauthorizedResponse,
   ApiInternalServerErrorResponse,
 } from '@nestjs/swagger';
+import { AuthGuard } from '@nestjs/passport';
 import { Address } from './address.entity';
 import { AddressesService } from './addresses.service';
 import { CreateAddressDto } from './dto/create-address.dto';
@@ -17,8 +18,10 @@ interface IUserId {
   userId: string;
 }
 
+@ApiBearerAuth()
 @ApiTags('address')
 @Controller('address')
+@UseGuards(AuthGuard())
 export class AddressesController {
   constructor(private addressesService: AddressesService) {}
 
