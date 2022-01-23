@@ -18,4 +18,14 @@ export class UsersService {
   async createUser(createUserDto: CreateUserDto): Promise<User> {
     return this.userRepository.createUser(createUserDto);
   }
+
+  async findUserById(id): Promise<User> {
+    const user = await this.userRepository.findOne(id);
+
+    if (!user) {
+      throw new NotFoundException('User id is not found');
+    }
+
+    return user;
+  }
 }
