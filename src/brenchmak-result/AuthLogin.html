@@ -1,0 +1,419 @@
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ghz</title>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/papaparse@4.5.0/papaparse.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/britecharts@2/dist/bundled/britecharts.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/britecharts/dist/css/britecharts.min.css" type="text/css" /></head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css" />
+
+  </head>
+
+	<body>
+
+		<section class="section">
+
+		<div class="container">
+			
+			
+				<h2 class="subtitle">Mon Jan 24 2022 @ 00:00:33</h2>
+			
+		</div>
+		<br />
+
+		<div class="container">
+      <nav class="breadcrumb has-bullet-separator" aria-label="breadcrumbs">
+        <ul>
+          <li>
+            <a href="#summary">
+              <span class="icon is-small">
+                <i class="fas fa-clipboard-list" aria-hidden="true"></i>
+              </span>
+              <span>Summary</span>
+            </a>
+          </li>
+          <li>
+            <a href="#histogram">
+              <span class="icon is-small">
+                <i class="fas fa-chart-bar" aria-hidden="true"></i>
+              </span>
+              <span>Histogram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#latency">
+              <span class="icon is-small">
+                <i class="far fa-clock" aria-hidden="true"></i>
+              </span>
+              <span>Latency Distribution</span>
+            </a>
+          </li>
+          <li>
+            <a href="#status">
+              <span class="icon is-small">
+                <i class="far fa-check-square" aria-hidden="true"></i>
+              </span>
+              <span>Status Distribution</span>
+            </a>
+					</li>
+					
+          <li>
+            <a href="#data">
+              <span class="icon is-small">
+                <i class="far fa-file-alt" aria-hidden="true"></i>
+              </span>
+              <span>Data</span>
+            </a>
+		  </li>
+		  <li>
+            <a href="#options">
+              <span class="icon is-small">
+                <i class="fas fa-cog" aria-hidden="true"></i>
+              </span>
+              <span>Options</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <hr />
+		</div>
+
+		
+
+	  <div class="container">
+			<div class="columns">
+				<div class="column is-narrow">
+					<div class="content">
+						<a name="summary">
+							<h3>Summary</h3>
+						</a>
+						<table class="table">
+							<tbody>
+								<tr>
+									<th>Count</th>
+									<td>200</td>
+								</tr>
+								<tr>
+									<th>Total</th>
+									<td>6.25 s</td>
+								</tr>
+								<tr>
+									<th>Slowest</th>
+								<td>1.87 s</td>
+								</tr>
+								<tr>
+									<th>Fastest</th>
+									<td>448.77 ms</td>
+								</tr>
+								<tr>
+									<th>Average</th>
+									<td>1.39 s</td>
+								</tr>
+								<tr>
+									<th>Requests / sec</th>
+									<td>32.02</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="column">
+					<div class="content">
+					</div>
+				</div>
+			</div>
+	  </div>
+
+	  <br />
+		<div class="container">
+			<div class="content">
+				<a name="histogram">
+					<h3>Histogram</h3>
+				</a>
+				<p>
+					<div class="js-bar-container"></div>
+				</p>
+			</div>
+	  </div>
+
+	  <br />
+		<div class="container">
+			<div class="content">
+				<a name="latency">
+					<h3>Latency distribution</h3>
+				</a>
+				<table class="table is-fullwidth">
+					<thead>
+						<tr>
+							
+								<th>10 %</th>
+							
+								<th>25 %</th>
+							
+								<th>50 %</th>
+							
+								<th>75 %</th>
+							
+								<th>90 %</th>
+							
+								<th>95 %</th>
+							
+								<th>99 %</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							
+								<td>977.88 ms</td>
+							
+								<td>1.43 s</td>
+							
+								<td>1.45 s</td>
+							
+								<td>1.49 s</td>
+							
+								<td>1.52 s</td>
+							
+								<td>1.58 s</td>
+							
+								<td>1.77 s</td>
+							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<br />
+		<div class="container">
+			<div class="columns">
+				<div class="column is-narrow">
+					<div class="content">
+						<a name="status">
+							<h3>Status distribution</h3>
+						</a>
+						<table class="table is-hoverable">
+							<thead>
+								<tr>
+									<th>Status</th>
+									<th>Count</th>
+									<th>% of Total</th>
+								</tr>
+							</thead>
+							<tbody>
+							  
+									<tr>
+									  <td>OK</td>
+										<td>200</td>
+										<td>100.00 %</td>
+									</tr>
+									
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+
+			<br />
+      <div class="container">
+        <div class="columns">
+          <div class="column is-narrow">
+            <div class="content">
+              <a name="data">
+                <h3>Data</h3>
+              </a>
+
+              <a class="button" id="dlJSON">JSON</a>
+              <a class="button" id="dlCSV">CSV</a>
+            </div>
+          </div>
+        </div>
+			</div>
+
+			<br />
+
+			<div class="container">
+				<div class="content">
+					<a name="options">
+						<h3>Options</h3>
+					</a>
+					<article class="message">
+						<div class="message-body">
+							<pre style="background-color: transparent;">{
+  "call": "glovory.Auth.Login",
+  "host": "0.0.0.0:50051",
+  "proto": "./protos/auth.proto",
+  "import-paths": [
+    "protos",
+    "."
+  ],
+  "insecure": true,
+  "load-schedule": "const",
+  "load-start": 0,
+  "load-end": 0,
+  "load-step": 0,
+  "load-step-duration": 0,
+  "load-max-duration": 0,
+  "concurrency": 50,
+  "concurrency-schedule": "const",
+  "concurrency-start": 0,
+  "concurrency-end": 0,
+  "concurrency-step": 1,
+  "concurrency-step-duration": 0,
+  "concurrency-max-duration": 0,
+  "total": 200,
+  "connections": 1,
+  "timeout": 20000000000,
+  "dial-timeout": 10000000000,
+  "data": {
+    "password": "GlovoryPassword",
+    "username": "glovory"
+  },
+  "binary": false,
+  "CPUs": 4
+}</pre>
+						</div>
+					</article>
+				</div>
+			</div>
+
+			<div class="container">
+        <hr />
+        <div class="content has-text-centered">
+          <p>
+            Generated by <strong>ghz</strong>
+          </p>
+          <a href="https://github.com/bojand/ghz"><i class="icon is-medium fab fa-github"></i></a>
+        </div>
+      </div>
+
+		</section>
+
+  </body>
+
+  <script>
+
+	const count = 200;
+
+	const rawData = [{"timestamp":"2022-01-24T00:00:28.079124391+07:00","latency":448850264,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.0791624+07:00","latency":448767578,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.096501028+07:00","latency":465151402,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.172169058+07:00","latency":536674861,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.202576453+07:00","latency":567082482,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.220240607+07:00","latency":584486935,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.226408888+07:00","latency":592751298,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.283359703+07:00","latency":649219859,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.318655415+07:00","latency":683710643,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.346540812+07:00","latency":710160256,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.392839103+07:00","latency":756246337,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.393303471+07:00","latency":757089100,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.448543437+07:00","latency":811614185,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.456645326+07:00","latency":819117075,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.495923219+07:00","latency":862154883,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.500368589+07:00","latency":862237537,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.568708779+07:00","latency":929930364,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.584249031+07:00","latency":952863389,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.599047932+07:00","latency":960268586,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.617090576+07:00","latency":977875620,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.681433956+07:00","latency":1041786914,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.704425724+07:00","latency":1062549752,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.704852356+07:00","latency":1064124759,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.733753601+07:00","latency":1091745085,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.790347484+07:00","latency":1156448688,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.813368423+07:00","latency":1180191536,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.844581086+07:00","latency":1201271973,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.845005227+07:00","latency":1201992860,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.903723442+07:00","latency":1259272783,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.92032913+07:00","latency":1275724965,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.951966678+07:00","latency":1305763454,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:28.968328467+07:00","latency":1322866118,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.018069173+07:00","latency":1371867854,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.023299208+07:00","latency":1376790652,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.066455461+07:00","latency":1419759461,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.0954395+07:00","latency":1448657192,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.138075929+07:00","latency":1490984008,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.13855999+07:00","latency":1491309808,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.184520512+07:00","latency":1537199042,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.198799064+07:00","latency":1551140721,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.239927409+07:00","latency":1591694887,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.262887754+07:00","latency":1615118056,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.299161677+07:00","latency":1650967229,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.302427455+07:00","latency":1653743218,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.355255054+07:00","latency":1706442162,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.39226106+07:00","latency":1743037686,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.406608445+07:00","latency":1757157917,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.416290262+07:00","latency":1766972604,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.469223095+07:00","latency":1819720142,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.511771919+07:00","latency":1432117636,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.524147788+07:00","latency":1874249747,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.527755879+07:00","latency":1448101668,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.584610548+07:00","latency":1487637995,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.632492933+07:00","latency":1429523558,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.632804856+07:00","latency":1453514367,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.638899995+07:00","latency":1418232975,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.704470173+07:00","latency":1477662944,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.735084008+07:00","latency":1416006873,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.784148401+07:00","latency":1437217346,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.801991382+07:00","latency":1518212141,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.840749096+07:00","latency":1447518422,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.845352341+07:00","latency":1451700400,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.894115151+07:00","latency":1445171710,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.9256789+07:00","latency":1468640977,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.943829409+07:00","latency":1443055929,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:29.967465545+07:00","latency":1471129850,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.005831285+07:00","latency":1436732146,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.02957954+07:00","latency":1444944380,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.048598313+07:00","latency":1449143969,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.091752755+07:00","latency":1474252290,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.123464627+07:00","latency":1441646722,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.150400422+07:00","latency":1445591138,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.153604955+07:00","latency":1448391735,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.203307713+07:00","latency":1469158098,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.238145744+07:00","latency":1446333967,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.256994466+07:00","latency":1443234183,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.284258445+07:00","latency":1439292065,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.315544604+07:00","latency":1470198627,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.351429976+07:00","latency":1447307535,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.359148589+07:00","latency":1438427689,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.412352789+07:00","latency":1459994283,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.42931642+07:00","latency":1460597980,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.462027912+07:00","latency":1438340682,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.471087038+07:00","latency":1452625618,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.540497275+07:00","latency":1444669646,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.540916592+07:00","latency":1474011074,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.564445618+07:00","latency":1425930061,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.582154258+07:00","latency":1443249699,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.653077075+07:00","latency":1453859722,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.668534708+07:00","latency":1428181264,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.668970775+07:00","latency":1484065639,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.692671171+07:00","latency":1429373413,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.768663215+07:00","latency":1469085593,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.77209389+07:00","latency":1416430309,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.787968436+07:00","latency":1485125005,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.80265367+07:00","latency":1409964383,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.875211564+07:00","latency":1458510165,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.886435832+07:00","latency":1474856696,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.916613871+07:00","latency":1404446573,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.916614278+07:00","latency":1447009808,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.977779863+07:00","latency":1453230417,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:30.996551866+07:00","latency":1468406793,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.024766644+07:00","latency":1391789966,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.034942612+07:00","latency":1449938989,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.080188725+07:00","latency":1446833300,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.135996979+07:00","latency":1496669066,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.144422053+07:00","latency":1439509681,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.191575491+07:00","latency":1407034667,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.21276463+07:00","latency":1477234522,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.256871884+07:00","latency":1454449993,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.264339884+07:00","latency":1423201331,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.300954715+07:00","latency":1455188603,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.343971221+07:00","latency":1449254134,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.369692905+07:00","latency":1443589524,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.378434938+07:00","latency":1434183722,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.40681412+07:00","latency":1438938318,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.472207434+07:00","latency":1465964926,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.480076745+07:00","latency":1450082993,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.498632585+07:00","latency":1444957622,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.509546333+07:00","latency":1417364891,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.588101229+07:00","latency":1437302100,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.612856441+07:00","latency":1488983573,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.615740718+07:00","latency":1461737873,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.628891788+07:00","latency":1425190911,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.696178241+07:00","latency":1457614964,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.742042476+07:00","latency":1426117105,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.742520269+07:00","latency":1457875124,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.76446474+07:00","latency":1507076770,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.812286633+07:00","latency":1460463466,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.843916166+07:00","latency":1484356834,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.864217812+07:00","latency":1451477873,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.926391672+07:00","latency":1463980730,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.948924731+07:00","latency":1477439266,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.961348232+07:00","latency":1531637829,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:31.992585503+07:00","latency":1451709169,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.052509041+07:00","latency":1487667957,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.052971852+07:00","latency":1511705797,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.07748676+07:00","latency":1494941192,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.141151207+07:00","latency":1487669883,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.156067374+07:00","latency":1486748998,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.164891292+07:00","latency":1495962194,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.184733366+07:00","latency":1489254188,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.25949278+07:00","latency":1487024760,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.274892081+07:00","latency":1505823626,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.275392402+07:00","latency":1487026809,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.295119911+07:00","latency":1492085700,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.362804563+07:00","latency":1487142079,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.382499583+07:00","latency":1495658060,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.409500668+07:00","latency":1492456983,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.409512546+07:00","latency":1492503855,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.46893709+07:00","latency":1490766916,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.490976518+07:00","latency":1494028295,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.529190006+07:00","latency":1504010273,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.529504944+07:00","latency":1493735457,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.576779371+07:00","latency":1496199591,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.596391536+07:00","latency":1459985965,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.649388962+07:00","latency":1504570627,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.655896316+07:00","latency":1463910084,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.679409719+07:00","latency":1466242503,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.70043741+07:00","latency":1443166993,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.772503615+07:00","latency":1507722031,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.772516415+07:00","latency":1471172273,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.782135151+07:00","latency":1437777847,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.804968858+07:00","latency":1434880150,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.88580176+07:00","latency":1501017199,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.899155532+07:00","latency":1426559215,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.916127233+07:00","latency":1508892435,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:32.999536897+07:00","latency":1519068516,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.040521599+07:00","latency":1541511189,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.072199797+07:00","latency":1483704856,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.086312218+07:00","latency":1576375180,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.127316249+07:00","latency":1514068981,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.144089811+07:00","latency":1527961325,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.188206047+07:00","latency":1558897842,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.190093788+07:00","latency":1493528297,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.243797182+07:00","latency":1501339539,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.249489805+07:00","latency":1506641847,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.293658138+07:00","latency":1528794711,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.294352556+07:00","latency":1481662069,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.353076517+07:00","latency":1488436470,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.36313234+07:00","latency":1518805323,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.39842979+07:00","latency":1471580853,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.412171427+07:00","latency":1462792564,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.456168077+07:00","latency":1494416155,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.47615745+07:00","latency":1483164108,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.500952032+07:00","latency":1448021615,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.524176034+07:00","latency":1470845964,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.562422972+07:00","latency":1478427472,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.592808889+07:00","latency":1451261964,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.605756091+07:00","latency":1449308454,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.644180686+07:00","latency":1478888594,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.670800598+07:00","latency":1485660193,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.704547346+07:00","latency":1444659829,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.714798799+07:00","latency":1439029227,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.756181+07:00","latency":1480291669,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.775873062+07:00","latency":1480252260,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.80958896+07:00","latency":1446362690,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.828558486+07:00","latency":1445672808,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.853629246+07:00","latency":1443737579,"error":"","status":"OK"},{"timestamp":"2022-01-24T00:00:33.874327053+07:00","latency":1464369082,"error":"","status":"OK"}];
+
+	const data = [
+		
+			{ name: '448.77 ms', value: 1 },
+		
+			{ name: '591.32 ms', value: 5 },
+		
+			{ name: '733.86 ms', value: 4 },
+		
+			{ name: '876.41 ms', value: 6 },
+		
+			{ name: '1018.96 ms', value: 4 },
+		
+			{ name: '1161.51 ms', value: 5 },
+		
+			{ name: '1304.06 ms', value: 5 },
+		
+			{ name: '1446.61 ms', value: 50 },
+		
+			{ name: '1589.15 ms', value: 110 },
+		
+			{ name: '1731.70 ms', value: 5 },
+		
+			{ name: '1874.25 ms', value: 5 },
+		
+	];
+
+	function createHorizontalBarChart() {
+		let barChart = britecharts.bar(),
+			tooltip = britecharts.miniTooltip(),
+			barContainer = d3.select('.js-bar-container'),
+			containerWidth = barContainer.node() ? barContainer.node().getBoundingClientRect().width : false,
+			tooltipContainer,
+			dataset;
+
+		tooltip.numberFormat('')
+		tooltip.valueFormatter(function(v) {
+			var percent = v / count * 100;
+			return v + ' ' + '(' + Number.parseFloat(percent).toFixed(1) + ' %)';
+		})
+
+		if (containerWidth) {
+			dataset = data;
+			barChart
+				.isHorizontal(true)
+				.isAnimated(true)
+				.margin({
+					left: 100,
+					right: 20,
+					top: 20,
+					bottom: 20
+				})
+				.colorSchema(britecharts.colors.colorSchemas.teal)
+				.width(containerWidth)
+				.yAxisPaddingBetweenChart(20)
+				.height(400)
+				// .hasPercentage(true)
+				.enableLabels(true)
+				.labelsNumberFormat('')
+				.percentageAxisToMaxRatio(1.3)
+				.on('customMouseOver', tooltip.show)
+				.on('customMouseMove', tooltip.update)
+				.on('customMouseOut', tooltip.hide);
+
+			barChart.orderingFunction(function(a, b) {
+				var nA = a.name.replace(/ms/gi, '');
+				var nB = b.name.replace(/ms/gi, '');
+
+				var vA = Number.parseFloat(nA);
+				var vB = Number.parseFloat(nB);
+
+				return vB - vA;
+			})
+
+			barContainer.datum(dataset).call(barChart);
+
+			tooltipContainer = d3.select('.js-bar-container .bar-chart .metadata-group');
+			tooltipContainer.datum([]).call(tooltip);
+		}
+	}
+
+	function setJSONDownloadLink () {
+		var filename = "data.json";
+		var btn = document.getElementById('dlJSON');
+		var jsonData = JSON.stringify(rawData)
+		var blob = new Blob([jsonData], { type: 'text/json;charset=utf-8;' });
+		var url = URL.createObjectURL(blob);
+		btn.setAttribute("href", url);
+		btn.setAttribute("download", filename);
+	}
+
+	function setCSVDownloadLink () {
+		var filename = "data.csv";
+		var btn = document.getElementById('dlCSV');
+		var csv = Papa.unparse(rawData)
+		var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+		var url = URL.createObjectURL(blob);
+		btn.setAttribute("href", url);
+		btn.setAttribute("download", filename);
+	}
+
+	createHorizontalBarChart();
+
+	setJSONDownloadLink();
+
+	setCSVDownloadLink();
+
+	</script>
+
+	<script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
+</html>

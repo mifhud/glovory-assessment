@@ -28,9 +28,12 @@
     "seed:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm-seeding/dist/cli.js seed -r src/database/config -n ormconfig.ts"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.5.3",
+    "@grpc/proto-loader": "^0.6.9",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/jwt": "^8.0.0",
+    "@nestjs/microservices": "^8.2.6",
     "@nestjs/passport": "^8.1.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^5.1.5",
