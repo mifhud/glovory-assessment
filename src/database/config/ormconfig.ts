@@ -18,6 +18,7 @@ const typeOrmConfig = {
   cli: {
     migrationsDir: join('src', 'database', 'migrations'),
   },
+  seeds: [join(__dirname, '..', 'seeds', '*.{ts,js}')],
 };
 
 module.exports = typeOrmConfig;
