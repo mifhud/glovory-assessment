@@ -13,6 +13,11 @@ const typeOrmConfig = {
   database: process.env.TYPEORM_DATABASE || dbConfig.database,
   entities: [join(__dirname, '../..', 'models', '**', '*.entity.{js,ts}')],
   synchronize: process.env.TYPEORM_SYNC || dbConfig.synchronize,
+  migrationsRun: dbConfig.migrationsRun,
+  migrations: [join(__dirname, '..', 'migrations', '*.{ts,js}')],
+  cli: {
+    migrationsDir: join('src', 'database', 'migrations'),
+  },
 };
 
 module.exports = typeOrmConfig;
