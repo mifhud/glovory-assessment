@@ -1,0 +1,15 @@
+server:
+  host: 'localhost'
+  port: 3000
+
+grpc:
+  host: 'localhost'
+  port: 50051
+
+typeorm:
+  type: 'postgres'
+  port: 5432
+  database: 'database'
+
+jwt:
+  expiresIn: 3600
