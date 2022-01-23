@@ -18,7 +18,7 @@ export class User extends BaseEntity {
   @Column({ type: 'varchar', length: 100, unique: true })
   username: string;
 
-  @Column({ type: 'varchar', length: 250, select: false })
+  @Column({ type: 'varchar', length: 250 })
   password: string;
 
   @Column({ type: 'varchar', length: 200, unique: true })
@@ -33,7 +33,7 @@ export class User extends BaseEntity {
   @Column({ type: 'timestamp with time zone', nullable: true })
   updatedAt: Date;
 
-  @Column({ type: 'varchar', select: false })
+  @Column({ type: 'varchar' })
   salt: string;
 
   @OneToMany((type) => Address, (address) => address.user_id)
