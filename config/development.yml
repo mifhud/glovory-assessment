@@ -1,0 +1,9 @@
+typeorm:
+  host: 'localhost'
+  username: 'postgres'
+  password: 'password'
+  synchronize: false
+  migrationsRun: false
+
+jwt:
+  secret: 'topSecret51'

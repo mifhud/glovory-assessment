@@ -1,0 +1,6 @@
+typeorm:
+  host: 'localhost'
+  username: 'postgres'
+  password: 'password'
+  migrationsRun: false
+  synchronize: false
