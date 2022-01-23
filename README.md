@@ -66,3 +66,33 @@ $ npm run start:dev
 ```bash
 http://localhost:3000/docs
 ```
+
+## Try GRPC Services
+
+Running command script in root directory
+
+```bash
+# Auth Service
+$ ghz --insecure \
+  --proto ./protos/auth.proto \
+  --call glovory.Auth.Login \
+  -d '{"username":"glovory","password":"GlovoryPassword"}' \
+  -O html \
+  -o ./brenchmak-result/AuthLogin.html \
+  0.0.0.0:50051
+
+# Address Service -> Change glovoryUserId with real user id
+$ ghz --insecure \
+  --proto ./protos/address.proto \
+  --call glovory.Address.List \
+  -d '{"user_id":"glovoryUserId"}' \
+  -O html \
+  -o ./brenchmak-result/AddressList.html \
+  0.0.0.0:50051
+```
+
+Result directory brenchmark
+
+```bash
+$ cd src/brenchmak-result
+```
