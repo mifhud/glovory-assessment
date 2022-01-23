@@ -5,7 +5,7 @@ import {
   ApiTags,
   ApiUnauthorizedResponse,
 } from '@nestjs/swagger';
-
+import { GrpcMethod } from '@nestjs/microservices';
 import { AuthService } from './auth.service';
 import { AuthCredentialsDto } from './dto/auth-credentials.dto';
 
@@ -22,5 +22,13 @@ export class AuthController {
     @Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto,
   ): Promise<{ accessToken: string }> {
     return this.authService.signIn(authCredentialsDto);
+  }
+
+  @GrpcMethod('Auth', 'Login')
+  async grpcSignIn(
+    @Body(ValidationPipe) authCredentialsDto: AuthCredentialsDto,
+  ) {
+    const user = await this.authService.grpcSignIn(authCredentialsDto);
+    return { user };
   }
 }
