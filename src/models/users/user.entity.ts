@@ -4,11 +4,12 @@ import {
   Column,
   BeforeInsert,
   BeforeUpdate,
+  PrimaryColumn,
   OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { Address } from '../address/address.entity';
+import { Address } from '../addresses/address.entity';
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -18,7 +19,7 @@ export class User extends BaseEntity {
   @Column({ type: 'varchar', length: 100, unique: true })
   username: string;
 
-  @Column({ type: 'varchar', length: 250 })
+  @Column({ type: 'varchar', length: 250, select: false })
   password: string;
 
   @Column({ type: 'varchar', length: 200, unique: true })
@@ -33,11 +34,11 @@ export class User extends BaseEntity {
   @Column({ type: 'timestamp with time zone', nullable: true })
   updatedAt: Date;
 
-  @Column()
+  @Column({ type: 'varchar', select: false })
   salt: string;
 
-  @OneToMany((type) => Address, (address) => address.user_id)
-  addresses: Address[];
+  // @OneToMany((type) => Address, (address) => address.user_id)
+  // addresses: Address[];
 
   @BeforeInsert()
   createDate() {
