@@ -4,6 +4,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
+  PrimaryColumn,
   BeforeInsert,
   BeforeUpdate,
   JoinColumn,
